@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Derintaş Mermer & Granit
 
-## Getting Started
+Mermer, granit ve doğal taş işçiliğinde hizmet veren **Derintaş Mermer & Granit** firmasının kurumsal tanıtım web sitesi.
 
-First, run the development server:
+## Teknolojiler
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
+
+## Başlangıç
 
 ```bash
+# Bağımlılıkları yükle
+npm install
+
+# Geliştirme sunucusunu başlat
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production build
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Site varsayılan olarak [http://localhost:3000](http://localhost:3000) adresinde çalışır.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Proje Yapısı
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── app/
+│   ├── layout.tsx          # Root layout, SEO metadata, Open Graph
+│   ├── page.tsx            # Ana sayfa (tüm bölümleri birleştirir)
+│   └── globals.css         # Tailwind tema, animasyonlar
+├── components/
+│   ├── Navbar.tsx           # Sticky navbar, scroll efekti, aktif bölüm göstergesi
+│   ├── Hero.tsx             # Paralaks hero, geometrik şekiller, scroll indicator
+│   ├── About.tsx            # Hakkımızda, istatistikler
+│   ├── Services.tsx         # 6 hizmet kartı
+│   ├── Gallery.tsx          # Grid galeri, lightbox/modal
+│   ├── Testimonials.tsx     # Müşteri yorumları
+│   ├── References.tsx       # Referans kurum logoları
+│   ├── Contact.tsx          # İletişim bilgileri, doğrulamalı form
+│   ├── Footer.tsx           # Alt bilgi, sosyal medya, tıklanabilir linkler
+│   ├── WhatsAppButton.tsx   # Floating WhatsApp butonu
+│   └── FadeInOnScroll.tsx   # Scroll animasyonu wrapper
+└── public/
+    ├── egesel-insaat.png    # Egesel İnşaat logosu
+    └── manisa-belediyesi.png # Manisa Büyükşehir Belediyesi logosu
+```
 
-## Learn More
+## Bölümler
 
-To learn more about Next.js, take a look at the following resources:
+| Bölüm | Açıklama |
+|-------|----------|
+| **Navbar** | Şeffaf → beyaz scroll geçişi, mobil hamburger menü |
+| **Hero** | Paralaks arka plan, floating geometrik şekiller, CTA butonları |
+| **Hakkımızda** | Firma tanıtımı, 20+ yıl deneyim, 1500+ proje istatistikleri |
+| **Hizmetler** | Mermer kesim, granit tezgah, doğal taş kaplama, zemin döşeme vb. |
+| **Galeri** | Grid düzen, hover efekt, tam ekran lightbox (klavye destekli) |
+| **Müşteri Yorumları** | 4 referans yorum kartı |
+| **Referanslar** | Manisa Büyükşehir Belediyesi, Egesel İnşaat logoları |
+| **İletişim** | Form doğrulama, tıklanabilir tel/e-posta, çalışma saatleri |
+| **WhatsApp** | Floating buton, pulse animasyonu |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Özelleştirme
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### İletişim Bilgileri
+Telefon, adres ve e-posta bilgileri şu dosyalarda güncellenir:
+- `components/Contact.tsx` — İletişim bölümü
+- `components/Footer.tsx` — Alt bilgi
+- `components/WhatsAppButton.tsx` — WhatsApp numarası (`PHONE_NUMBER`)
 
-## Deploy on Vercel
+### Renk Paleti
+`app/globals.css` dosyasındaki `@theme inline` bloğunda tanımlıdır:
+- `navy-900`: #0f2440 (en koyu)
+- `navy-800`: #1e3a5f
+- `navy-700`: #2c5f8a
+- `navy-600`: #3a7cb8
+- `navy-100`: #dce8f5
+- `navy-50`: #eef4fb (en açık)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Yeni Referans Ekleme
+`components/References.tsx` dosyasındaki `references` dizisine yeni obje ekleyin ve logoyu `public/` klasörüne koyun.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Galeri Görselleri
+`components/Gallery.tsx` dosyasındaki `galleryItems` dizisinde placeholder gradientler gerçek görsellerle değiştirilebilir.
+
+## Deployment
+
+Vercel üzerinde deploy etmek için:
+
+```bash
+npx vercel
+```
+
+Veya [Vercel Dashboard](https://vercel.com/new) üzerinden GitHub reposunu bağlayabilirsiniz.
+
+## İletişim
+
+**Derintaş Mermer & Granit**
+- Adres: Aşık Veysel, 5733/3. Sk. No: 36/A, 35130 Karabağlar/İzmir
+- Telefon: +90 (533) 030 62 37
+- E-posta: info@derintasmermer.com

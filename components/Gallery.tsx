@@ -1,16 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 const galleryItems = [
-  { title: "Mermer Mutfak Tezgahı", category: "Tezgah", color: "from-gray-300 to-gray-400" },
-  { title: "Granit Zemin Döşeme", category: "Zemin", color: "from-stone-400 to-stone-500" },
-  { title: "Doğal Taş Duvar Kaplama", category: "Kaplama", color: "from-amber-200 to-amber-300" },
-  { title: "Mermer Merdiven", category: "Merdiven", color: "from-gray-200 to-gray-300" },
-  { title: "Granit Banyo Tezgahı", category: "Tezgah", color: "from-zinc-400 to-zinc-500" },
-  { title: "Özel Tasarım Şömine", category: "Özel Proje", color: "from-stone-300 to-stone-400" },
-  { title: "Traverten Dış Cephe", category: "Kaplama", color: "from-yellow-100 to-yellow-200" },
-  { title: "Mermer Lavabo", category: "Özel Proje", color: "from-gray-100 to-gray-200" },
+  { title: "Granit Mutfak Tezgahı", category: "Tezgah", image: "/granit-tezgah.jpg" },
+  { title: "Traverten Havuz Terası", category: "Dış Mekan", image: "/traverten-teras.jpg" },
+  { title: "Havuz Kenarı Doğal Taş", category: "Dış Mekan", image: "/havuz-kenari.jpg" },
+  { title: "Mermer Merdiven & Giriş", category: "Merdiven", image: "/mermer-merdiven.jpg" },
 ];
 
 export default function Gallery() {
@@ -74,29 +71,27 @@ export default function Gallery() {
               key={index}
               onClick={() => setLightboxIndex(index)}
               className={`group relative overflow-hidden rounded-xl cursor-pointer ${
-                index === 0 || index === 5 ? "col-span-2 row-span-2" : ""
+                index === 0 || index === 3 ? "col-span-2 row-span-2" : ""
               }`}
             >
               <div
-                className={`bg-gradient-to-br ${item.color} w-full ${
-                  index === 0 || index === 5 ? "aspect-square" : "aspect-[4/3]"
-                } flex items-center justify-center transition-transform duration-500 group-hover:scale-105`}
+                className={`relative w-full ${
+                  index === 0 || index === 3 ? "aspect-square" : "aspect-[4/3]"
+                } overflow-hidden`}
               >
-                <svg
-                  className="w-12 h-12 text-white/40"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-                  />
-                </svg>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes={
+                    index === 0 || index === 3
+                      ? "(max-width: 1024px) 100vw, 50vw"
+                      : "(max-width: 1024px) 50vw, 25vw"
+                  }
+                />
               </div>
-              <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/70 transition-all duration-300 flex items-end">
+              <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/60 transition-all duration-300 flex items-end">
                 <div className="p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <span className="text-white/70 text-xs font-medium">
                     {item.category}
@@ -183,22 +178,15 @@ export default function Gallery() {
             className="max-w-4xl w-full mx-4 sm:mx-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className={`bg-gradient-to-br ${galleryItems[lightboxIndex].color} w-full aspect-[16/10] rounded-2xl flex items-center justify-center`}
-            >
-              <svg
-                className="w-24 h-24 text-white/30"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-                />
-              </svg>
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden">
+              <Image
+                src={galleryItems[lightboxIndex].image}
+                alt={galleryItems[lightboxIndex].title}
+                fill
+                className="object-cover"
+                sizes="90vw"
+                priority
+              />
             </div>
             {/* Caption */}
             <div className="text-center mt-6">

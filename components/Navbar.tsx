@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#anasayfa", label: "Anasayfa" },
@@ -49,29 +50,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#anasayfa" className="flex items-center gap-3">
-            <div
-              className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-                scrolled ? "bg-navy-800" : "bg-white/20 backdrop-blur-sm"
-              }`}
-            >
-              <span className="text-white font-bold text-lg">D</span>
-            </div>
-            <div>
-              <span
-                className={`text-xl font-bold transition-colors ${
-                  scrolled ? "text-navy-900" : "text-white"
+          <a href="#anasayfa" className="flex items-center">
+            <div className="relative h-14 w-36">
+              <Image
+                src="/logo.png"
+                alt="Derintaş Mermer & Granit"
+                fill
+                className={`object-contain transition-all duration-300 ${
+                  scrolled ? "" : "brightness-0 invert"
                 }`}
-              >
-                Derintaş
-              </span>
-              <span
-                className={`block text-xs -mt-1 tracking-wide transition-colors ${
-                  scrolled ? "text-navy-700" : "text-white/70"
-                }`}
-              >
-                Mermer & Granit
-              </span>
+                sizes="144px"
+                priority
+              />
             </div>
           </a>
 

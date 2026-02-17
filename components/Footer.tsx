@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const quickLinks = [
   { href: "#anasayfa", label: "Anasayfa" },
   { href: "#hakkimizda", label: "Hakkımızda" },
@@ -22,15 +24,15 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">D</span>
-              </div>
-              <div>
-                <span className="text-lg font-bold">Derintaş</span>
-                <span className="block text-xs text-white/60 -mt-0.5">
-                  Mermer & Granit
-                </span>
+            <div className="mb-4">
+              <div className="relative h-14 w-36">
+                <Image
+                  src="/logo.png"
+                  alt="Derintaş Mermer & Granit"
+                  fill
+                  className="object-contain brightness-0 invert"
+                  sizes="144px"
+                />
               </div>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">

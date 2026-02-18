@@ -4,7 +4,7 @@ import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +31,13 @@ export const metadata: Metadata = {
     "Derintaş Mermer",
   ],
   alternates: {
-    canonical: "/",
+    canonical: "https://www.derintasmermer.com",
+  },
+  other: {
+    "geo.region": "TR-35",
+    "geo.placename": "Karabağlar, İzmir",
+    "geo.position": "38.3895;27.1",
+    "ICBM": "38.3895, 27.1",
   },
   openGraph: {
     title: "Derintaş Mermer & Granit | İzmir Mermer ve Doğal Taş",
@@ -69,11 +75,20 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Derintaş Mermer & Granit",
+  alternateName: ["Derintaş Mermer", "Derintas Mermer", "Derintaş Mermer İnşaat"],
+  url: "https://www.derintasmermer.com",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://www.derintasmermer.com",
   name: "Derintaş Mermer & Granit",
+  alternateName: ["Derintaş Mermer", "Derintas Mermer", "Derintaş Mermer İnşaat"],
   description:
     "İzmir'de mermer, granit ve doğal taş kesim, işleme ve uygulama hizmetleri. Mutfak tezgahı, zemin döşeme, merdiven ve özel tasarım projeler.",
   url: "https://www.derintasmermer.com",
@@ -126,8 +141,7 @@ const jsonLd = {
     ],
   },
   sameAs: [
-    "https://facebook.com",
-    "https://instagram.com",
+    "https://www.instagram.com/derintasmermerinsaat/",
   ],
 };
 
@@ -139,6 +153,10 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

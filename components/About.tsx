@@ -18,9 +18,9 @@ export default function About() {
               Hakkımızda
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mt-3 mb-6 leading-tight">
-              Kaliteli İşçilik,
+              Derintaş Mermer & Granit
               <br />
-              Güvenilir Hizmet
+              <span className="text-navy-700">Kaliteli İşçilik, Güvenilir Hizmet</span>
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               Derintaş Mermer & Granit olarak, yılların getirdiği tecrübe ve

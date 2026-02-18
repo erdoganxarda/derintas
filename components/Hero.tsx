@@ -75,11 +75,12 @@ export default function Hero() {
         <div className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm font-medium mb-8 border border-white/20">
           20+ Yıllık Deneyim
         </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
-          Derintaş Mermer
-          <br />
-          <span className="text-navy-100">& Granit</span>
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-4">
+          Derintaş Mermer & Granit
         </h1>
+        <p className="text-xl sm:text-2xl lg:text-3xl text-navy-100 font-light mb-6">
+          Doğanın Eşsiz Güzelliğini Taşa İşliyoruz
+        </p>
         <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
           İzmir Karabağlar&apos;da mermer, granit ve doğal taş işçiliğinde kalite ve estetiği bir araya
           getiriyoruz. Yaşam alanlarınıza değer katan çözümler sunuyoruz.

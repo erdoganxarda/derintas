@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.derintasmermer.com"),
+  metadataBase: new URL("https://derintasmermer.com"),
   title: "Derintaş Mermer & Granit | İzmir Mermer, Granit ve Doğal Taş",
   description:
     "İzmir Karabağlar'da mermer, granit ve doğal taş kesim, işleme ve uygulama hizmetleri. Mutfak tezgahı, granit tezgah, zemin döşeme, merdiven ve özel tasarım projeler. 20+ yıllık deneyim.",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Derintaş Mermer",
   ],
   alternates: {
-    canonical: "https://www.derintasmermer.com",
+    canonical: "https://derintasmermer.com",
   },
   other: {
     "geo.region": "TR-35",
@@ -80,22 +80,22 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: "Derintaş Mermer & Granit",
   alternateName: ["Derintaş Mermer", "Derintas Mermer", "Derintaş Mermer İnşaat"],
-  url: "https://www.derintasmermer.com",
+  url: "https://derintasmermer.com",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://www.derintasmermer.com",
+  "@id": "https://derintasmermer.com",
   name: "Derintaş Mermer & Granit",
   alternateName: ["Derintaş Mermer", "Derintas Mermer", "Derintaş Mermer İnşaat"],
   description:
     "İzmir'de mermer, granit ve doğal taş kesim, işleme ve uygulama hizmetleri. Mutfak tezgahı, zemin döşeme, merdiven ve özel tasarım projeler.",
-  url: "https://www.derintasmermer.com",
+  url: "https://derintasmermer.com",
   telephone: "+905330306237",
   email: "info@derintasmermer.com",
-  image: "https://www.derintasmermer.com/logo.png",
-  logo: "https://www.derintasmermer.com/logo.png",
+  image: "https://derintasmermer.com/logo.png",
+  logo: "https://derintasmermer.com/logo.png",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Aşık Veysel, 5733/3. Sk. No: 36/A",
